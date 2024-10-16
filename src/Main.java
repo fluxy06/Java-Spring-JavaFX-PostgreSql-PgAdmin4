@@ -6,122 +6,147 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.FXML; // Импорт аннотации FXML
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Main extends Application {
-
-    String url = "jdbc:postgresql://Nikita-MSI:5432/Тут пишем название своей БД";
-    String name = "postgres";
-    String pass = "123";
-
-    //
-    //
-    //
+    //#region Запись информации для подключения
+    static String url = "jdbc:postgresql://Nikita-MSI:5432/TrafficsPoliceDataBase";
+    static String name = "postgres";
+    static String pass = "123";
+    //#endregion
+    //#region Объявление выпадающих списков для добавления в них информации
     @FXML
     private ComboBox<String> comBoxFirstPage;
     @FXML
-    private ComboBox<String> comBoxSecondPage;// Объявляем переменную для ComboBox для второго таба;
+    private ComboBox<String> comBoxSecondPage; // Для второго таба
     @FXML
-    private ComboBox<String> comBoxThirdPage; // Объявляем выпадающий список для третьей вкладки;
+    private ComboBox<String> comBoxThirdPage; // Для третьей вкладки
+    //#endregion
 
-    //Объявляем переменные для создания запросов в БД
+    //#region Объявляем переменные для создания запросов в БД для странички с просмотром информации о владельцах автомобилей
     @FXML
-    private TextField modelOfCar; // модель автомобиля;
+    private TextField modelOfCar; // модель автомобиля
     @FXML
-    private TextField typeOfUser; // тип лица - юрик или физик;
+    private TextField typeOfUser; // тип лица - юрик или физик
     @FXML
-    private TextField numberOfCar; // номера машины;
+    private TextField numberOfCar; // номера машины
     @FXML
-    private TextField nameOfUser; // ФИО человека;
+    private TextField nameOfUser; // ФИО человека
     @FXML
-    private TextField valueOfEngine; // объем двигателя;
+    private TextField valueOfEngine; // объем двигателя
     @FXML
-    private TextField typeOfBody; // тип кузова;
+    private TextField typeOfBody; // тип кузова
     @FXML
-    private TextField numberOfFederation; // VIN номер тачки;
+    private TextField numberOfFederation; // VIN номер автомобиля
     @FXML
     private DatePicker dateOfCreatCar; // Дата выпуска автомобиля
+    @FXML
+    private TextField colorOfCar; // Цвет автомобиля
+    @FXML
+    private TextField adressOfUser; // Адрес пользователя
+    //#endregion
 
-    // Объявляем переменные для фиксации информации в таблицу с ДТП
+    //#region Объявляем переменные для фиксации информации в таблицу с ДТП
     @FXML
     private TextField roadConditions; // дорожные условия
     @FXML
-    private TextField causeOfCollision; // причина столкновения;
+    private TextField causeOfCollision; // причина столкновения
     @FXML
-    private TextField sumOfDamage; // сумма ущерба;
+    private TextField sumOfDamage; // сумма ущерба
     @FXML
-    private TextArea ReportOfAcciedent; // ОТЧЕТ ОБ АВАРИИ;
+    private TextArea reportOfAccident; // ОТЧЕТ ОБ АВАРИИ
     @FXML
-    private TextField categoryOfAccident; // категория аварии;
+    private TextField categoryOfAccident; // категория аварии
     @FXML
-    private TextField typesOfCars; // Автомобили, через запятую, участвующие в аварии;
+    private TextField typesOfCars; // Автомобили, через запятую, участвующие в аварии
     @FXML
-    private TextField adressOfAccident; // Адресс аварии;
+    private TextField adressOfAccident; // Адрес аварии
     @FXML
-    private DatePicker dateOfAccident; // Дата аварии;
+    private DatePicker dateOfAccident; // Дата аварии
+    //#endregion
 
-    //Объявляем те же переменые что для второго, но меняем название что-бы не произошло логической ошибки;
+    //#region Объявляем те же переменные, что для второго, но меняем название, это для 3 вкладки, с просмотром ДТП
     @FXML
     private TextField roadConditions2; // дорожные условия
     @FXML
-    private TextField causeOfCollision2; // причина столкновения;
+    private TextField causeOfCollision2; // причина столкновения
     @FXML
-    private TextField sumOfDamage2; // сумма ущерба;
+    private TextField sumOfDamage2; // сумма ущерба
     @FXML
-    private TextArea ReportOfAcciedent2; // ОТЧЕТ ОБ АВАРИИ;
+    private TextArea reportOfAccident2; // ОТЧЕТ ОБ АВАРИИ
     @FXML
-    private TextField categoryOfAccident2; // категория аварии;
+    private TextField categoryOfAccident2; // категория аварии
     @FXML
-    private TextField typesOfCars2; // Автомобили, через запятую, участвующие в аварии;
+    private TextField typesOfCars2; // Автомобили, через запятую, участвующие в аварии
     @FXML
-    private TextField adressOfAccident2; // Адресс аварии;
+    private TextField adressOfAccident2; // Адрес аварии
     @FXML
-    private DatePicker dateOfAccident2; // Дата аварии;
-
-    //С объявлением переменных покончено
-    //
-    //
-    //
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MyFinallInterface.fxml"));
-        loader.setController(this); // Устанавливаем контроллером текущий класс (Main)
-        Parent root = loader.load(); // Загружаем интерфейс
-
-        //Добавление элементов в выподающий список На первой страничке тип Автомобиля;
-        comBoxFirstPage.getItems().add("Легковой");
-        comBoxFirstPage.getItems().add("Грузовой");
-        comBoxFirstPage.getItems().add("Мотоцикл");
-        comBoxFirstPage.getItems().add("Трактор");
-        comBoxFirstPage.getItems().add("Полуприцеп");
-        comBoxFirstPage.getItems().add("Автобус");
-        comBoxFirstPage.getItems().add("МикроАвтобус");
+    private DatePicker dateOfAccident2; // Дата аварии
+    //#endregion
 
 
-        // Добавление элементов в выпадающий список для второй странички тип происшествия;
-        comBoxSecondPage.getItems().add("Наезд на ограждение, стобл");
-        comBoxSecondPage.getItems().add("Наезд на пешехода");
-        comBoxSecondPage.getItems().add("Лобовое столкновение");
-        comBoxSecondPage.getItems().add("Наезд на транспорт стоящий спереди");
-        comBoxSecondPage.getItems().add("Боковое столкновение на перекрестке");
-
-
-        //Добавление элементов в выпадающий список на третьей вкладке
-        comBoxThirdPage.getItems().add("Наезд на ограждение, стобл");
-        comBoxThirdPage.getItems().add("Наезд на пешехода");
-        comBoxThirdPage.getItems().add("Лобовое столкновение");
-        comBoxThirdPage.getItems().add("Наезд на транспорт стоящий спереди");
-        comBoxThirdPage.getItems().add("Боковое столкновение на перекрестке");
-
-        // Создаём сцену
-        Scene scene = new Scene(root, 1280, 780);
-        // Устанавливаем сцену и показываем окно
-        primaryStage.setTitle("Система учета автомобилей и ДТП");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
-
+    //#region запуск приложения
     public static void main(String[] args) {
         launch(args);
     }
+    //#endregion
+
+
+    //#region Загрузка интерфейса, проверка на ошибки, инициализация, задаем размеры окна, некоторые свойства
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            System.out.println("Загрузка");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MyFinallInterface.fxml"));
+            loader.setController(this);
+            Parent root = loader.load();
+            System.out.println("Интерфейс загружен");
+
+            // Создаем сцену и показываем окно
+            Scene scene = new Scene(root, 1280, 780);
+            primaryStage.setTitle("Система учета автомобилей и ДТП");
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.show();
+            System.out.println("Сцена показана");
+
+        } catch (IOException e) {
+            System.err.println("Ошибка при загрузке FXML: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("Произошла ошибка: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    //#endregion
+
+
+    //#region Добавление в выпадающие списки варианты выбора
+    @FXML
+    public void initialize() {
+        // Инициализация ComboBox
+        comBoxFirstPage.getItems().addAll("Легковой", "Грузовой", "Мотоцикл", "Трактор", "Полуприцеп", "Автобус", "МикроАвтобус");
+
+        comBoxSecondPage.getItems().addAll("Наезд на ограждение, столб", "Наезд на пешехода", "Лобовое столкновение", "Наезд на транспорт стоящий спереди", "Боковое столкновение на перекрестке");
+
+        comBoxThirdPage.getItems().addAll("Наезд на ограждение, столб", "Наезд на пешехода", "Лобовое столкновение", "Наезд на транспорт стоящий спереди", "Боковое столкновение на перекрестке");
+    }
+    //#endregion
+
+    //#region Подключение к БД
+    public static Connection connect() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(url, name, pass);
+            System.out.println("Подключение успешно выполнено!");
+        } catch (SQLException e) {
+            System.out.println("Видимо произошла ошибка..");
+            e.printStackTrace();
+        }
+        return connection;
+    }
+    //#endregion
 }
