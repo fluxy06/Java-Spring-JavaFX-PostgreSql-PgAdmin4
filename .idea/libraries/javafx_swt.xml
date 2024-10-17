@@ -9,6 +9,9 @@
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/lib/javafx.media.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/lib/javafx.swing.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/lib/javafx.web.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files/spring/h2-2.1.210.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files/spring/spring-context-5.3.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../Program Files/spring/spring-data-jpa-2.7.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -19,6 +22,8 @@
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/src.zip!/javafx.media" />
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/src.zip!/javafx.swing" />
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23/src.zip!/javafx.web" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/javafx-sdk-23" recursive="false" type="SOURCES" />
   </library>
 </component>
