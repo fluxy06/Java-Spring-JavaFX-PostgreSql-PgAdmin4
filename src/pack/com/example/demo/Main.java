@@ -4,6 +4,7 @@
     import javafx.application.Application;
 
     import java.sql.*;
+    import java.sql.Date;
     import java.time.LocalDate;
     import javafx.fxml.FXMLLoader;
     import javafx.scene.Parent;
@@ -29,7 +30,7 @@
         static String pass = "123";
         //#endregion
 
-        //#region Создание переменных для работы со столбцами
+        //#region Создание переменных для работы со столбцами вкладки просмотра информации о пользователе
         @FXML
         private TableView<InfoCarsUsers> MyTableFirstPage; // переменная всей таблицы в целом
         // каким образом работает: Получается, выбираем столбец, задаем значение, задаем навзание переменной
@@ -91,40 +92,40 @@
 
         //#region Объявляем переменные для фиксации информации в таблицу с ДТП
         @FXML
-        private TextField roadConditions; // дорожные условия
+        private TextField RoadConditions; // дорожные условия
         @FXML
-        private TextField causeOfCollision; // причина столкновения
+        private TextField Cause; // причина столкновения
         @FXML
-        private TextField sumOfDamage; // сумма ущерба
+        private TextField SumDamage; // сумма ущерба
         @FXML
-        private TextArea reportOfAccident; // ОТЧЕТ ОБ АВАРИИ
+        private TextArea Report; // ОТЧЕТ ОБ АВАРИИ
         @FXML
-        private TextField categoryOfAccident; // категория аварии
+        private TextField Category; // категория аварии
         @FXML
-        private TextField typesOfCars; // Автомобили, через запятую, участвующие в аварии
+        private TextField ModelsAuto; // Автомобили, через запятую, участвующие в аварии
         @FXML
-        private TextField adressOfAccident; // Адрес аварии
+        private TextField AdressAccident; // Адрес аварии
         @FXML
-        private DatePicker dateOfAccident; // Дата аварии
+        private DatePicker DataAccident; // Дата аварии
         //#endregion
 
         //#region Объявляем те же переменные, что для второго, но меняем название, это для 3 вкладки, с просмотром ДТП
         @FXML
-        private TextField roadConditions2; // дорожные условия
+        private TextField RoadConditions2; // дорожные условия
         @FXML
-        private TextField causeOfCollision2; // причина столкновения
+        private TextField Cause2; // причина столкновения
         @FXML
-        private TextField sumOfDamage2; // сумма ущерба
+        private TextField SumDamage2; // сумма ущерба
         @FXML
-        private TextArea reportOfAccident2; // ОТЧЕТ ОБ АВАРИИ
+        private TextArea Report2; // ОТЧЕТ ОБ АВАРИИ
         @FXML
-        private TextField categoryOfAccident2; // категория аварии
+        private TextField Category2; // категория аварии
         @FXML
-        private TextField typesOfCars2; // Автомобили, через запятую, участвующие в аварии
+        private TextField ModelsAuto2; // Автомобили, через запятую, участвующие в аварии
         @FXML
-        private TextField adressOfAccident2; // Адрес аварии
+        private TextField AdressAccident2; // Адрес аварии
         @FXML
-        private DatePicker dateOfAccident2; // Дата аварии
+        private DatePicker DataAccident2; // Дата аварии
         //#endregion
 
         //#region запуск приложения
@@ -160,7 +161,7 @@
         }
         //#endregion
         //Тут начинаются функции программы тоесть по типу нажали на кнопочку и что то произошло
-        //#region Функция Добавление информации в БД с проверкой
+        //#region Функция Добавление информации в БД с проверкой для таблицы InformationOfUsers
         @FXML
         private void CreateReport() {
             // Создаем объект нашего класса проверки строк
@@ -179,6 +180,7 @@
             String userAdres = adressOfUser.getText();
             String typeAuto = getTypeAuto();
 
+            //#region Проверки на корректность заполнения полей
             // Получаем текущую дату для сравнения, чтобы не произошла ошибка случайно.
             LocalDate currentDate = LocalDate.now();
 
@@ -196,6 +198,7 @@
                 System.out.println("Выбранная дата является некорректной.");
                 return;
             }
+            //#endregion
 
             // Создаем объект InfoCarsUsers для дальнейшей работы
             InfoCarsUsers carUser = new InfoCarsUsers(model, typeAuto, typeUser, numbersCars, dateCreated, name, userAdres,
@@ -229,6 +232,74 @@
             }
         }
         //#endregion
+
+        //#region Функция добавления информации в таблицу TrafficAccidents
+        @FXML
+        private void CreateRoadAccident() {
+            // Создаем объект нашего класса проверки строк
+            StrinMethods meth = new StrinMethods();
+            //#region Записываем в переменные данные, введенные пользователем
+            LocalDate data = DataAccident.getValue();
+            String models = ModelsAuto.getText();
+            String sumDamage = SumDamage.getText();
+            String cause = Cause.getText();
+            String roadConditions = RoadConditions.getText();
+            String typAccident = getTypeAccident();
+            String category = Category.getText();
+            String adressAccident = AdressAccident.getText();
+            String report = Report.getText();
+            //#endregion записываем значения
+            LocalDate currentDate = LocalDate.now();
+
+            //#region Проверяем на пустые поля
+            if (meth.isNullOrEmpty(models) || meth.isNullOrEmpty(typAccident) ||
+                    meth.isNullOrEmpty(cause) ||
+                    meth.isNullOrEmpty(category) || data == null || meth.isNullOrEmpty(adressAccident) ||
+                    meth.isNullOrEmpty(report)){
+                System.out.println("Одно или несколько полей пустые.");
+                return; // Останавливаем выполнение функции в случае, если одно из полей пустое
+            }
+
+            // Проверяем корректность даты
+            if (data.isAfter(currentDate)) {
+                System.out.println("Выбранная дата является некорректной.");
+                return;
+            }
+            //#endregion
+
+            Acidenst accident = new Acidenst(data, models, sumDamage, cause, roadConditions, typAccident,
+                    category, adressAccident,report);
+
+            String sqlInsert = "INSERT INTO \"TrafficAccidents\" (\"DataAccident\", \"TypeAccident\"," +
+                    "\"AdressAccident\", \"ModelsAuto\"," +
+                    "\"SumDamage\", \"Cause\", \"Category\", \"RoadConditions\", \"Report\") " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) " +  // 9 полей
+                    "ON CONFLICT (\"DataAccident\", \"TypeAccident\") DO NOTHING";
+
+            try (Connection conn = connect();
+                 PreparedStatement pstmt = conn.prepareStatement(sqlInsert)) {
+
+                pstmt.setDate(1, java.sql.Date.valueOf(data));      // DataAccident
+                pstmt.setString(2, typAccident);                   // TypeAccident
+                pstmt.setString(3, adressAccident);                // AdressAccident
+                pstmt.setString(4, models);                        // ModelsAuto
+                pstmt.setString(5, sumDamage);                     // SumDamage
+                pstmt.setString(6, cause);                         // Cause
+                pstmt.setString(7, category);                      // Category
+                pstmt.setString(8, roadConditions);                // RoadConditions
+                pstmt.setString(9, report);                        // Report
+
+                pstmt.executeUpdate();
+                System.out.println("Данные успешно добавлены или уже существуют.");
+            } catch (SQLException e) {
+                System.out.println("Ошибка при добавлении данных в базу данных: " + e.getMessage());
+                e.printStackTrace();
+            }
+
+
+        }
+        //#endregion
+
         //#region Функция для метода добавления информации в БД
         public ObservableList<InfoCarsUsers> executeQueryAndGetData(String sql) {
             ObservableList<InfoCarsUsers> data = FXCollections.observableArrayList();
@@ -261,6 +332,7 @@
             return data;
         }
         //#endregion
+
         //#region Создание функции вывода информации в таблицу по заданной выборке
         @FXML
         public void LooksAtUsers() {
@@ -316,6 +388,14 @@
 
         //#endregion
 
+        //#region Создаем слушатель для второй страницы с выпадающим списком
+        private String typeAccident;
+
+        private String getTypeAccident() {
+            return typeAccident;
+        }
+        //#endregion
+
         //#region Инициализация приложения
         @FXML
         public void initialize() {
@@ -328,6 +408,9 @@
 
             comBoxFirstPage.valueProperty().addListener((observable, oldValue, newValue) -> {  // тут лямба функция, я не понимаю как точно она работает поэтому запомнить нужно конструкцию
                 typeAuto = newValue; // Сохраняем выбранное значение в поле
+            });
+            comBoxSecondPage.valueProperty().addListener((observable, oldValue, newValue) -> {  // тут лямба функция, я не понимаю как точно она работает поэтому запомнить нужно конструкцию
+                typeAccident = newValue; // Сохраняем выбранное значение в поле
             });
             initializeTableColumns();
 
