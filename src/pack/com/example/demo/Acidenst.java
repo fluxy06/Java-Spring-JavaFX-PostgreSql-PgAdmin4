@@ -12,12 +12,13 @@ public class Acidenst {
     private String Conditions;
     private String Category;
     private String TypeAccident;
+    private String NameOfUsersOfAccident;
     //объявили переменные
 
     //Далее делаем конструктор класса
     public Acidenst(LocalDate Data,String ModelsAuto,String Cause,String Report,
                     String Adress,String SumDamage,String Conditions,String Category,
-                    String TypeAccident) {
+                    String TypeAccident, String NameOfUsersOfAccident) {
         this.Data = Data;
         this.ModelsAuto = ModelsAuto;
         this.Cause = Cause;
@@ -27,6 +28,7 @@ public class Acidenst {
         this.Conditions = Conditions;
         this.Category = Category;
         this.TypeAccident = TypeAccident;
+        this.NameOfUsersOfAccident = NameOfUsersOfAccident;
     }
     //сделали конструктор
 
@@ -65,5 +67,8 @@ public class Acidenst {
 
     public String getTypeAccident() {
         return TypeAccident;
+    }
+    public String getNameOfUsersOfAccident() {
+        return NameOfUsersOfAccident;
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -14,116 +13,99 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="780.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="985.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab text="Формирование отчета">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                         <TableView fx:id="MyTableFirstPage" layoutX="7.0" layoutY="8.0" prefHeight="502.0" prefWidth="1271.0" style="-fx-border-color: #8b00ff;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
-                             <columns>
-                                 <TableColumn fx:id="carBrandColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Марка автомобиля" />
-                                 <TableColumn fx:id="carTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Тип автомобиля" />
-                                 <TableColumn fx:id="personTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Тип лица" />
-                                 <TableColumn fx:id="licensePlateColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Гос номер" />
-                                 <TableColumn fx:id="yearColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Год выпуска" />
-                                 <TableColumn fx:id="ownerNameColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="ФИО владельца" />
-                                 <TableColumn fx:id="addressColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Адрес" />
-                                 <TableColumn fx:id="engineVolumeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Объем двигателя" />
-                                 <TableColumn fx:id="colorColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Цвет" />
-                                 <TableColumn fx:id="bodyTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Кузов" />
-                                 <TableColumn fx:id="vinColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="VIN" />
-                             </columns>
-                         </TableView>
+    <children>
+        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="985.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Формирование отчета">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="MyTableFirstPage" layoutX="7.0" layoutY="8.0" prefHeight="502.0" prefWidth="1271.0" style="-fx-border-color: #8b00ff;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+                                    <columns>
+                                        <TableColumn fx:id="carBrandColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Марка автомобиля" />
+                                        <TableColumn fx:id="carTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Тип автомобиля" />
+                                        <TableColumn fx:id="personTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Тип лица" />
+                                        <TableColumn fx:id="licensePlateColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Гос номер" />
+                                        <TableColumn fx:id="yearColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Год выпуска" />
+                                        <TableColumn fx:id="ownerNameColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="ФИО владельца" />
+                                        <TableColumn fx:id="addressColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Адрес" />
+                                        <TableColumn fx:id="engineVolumeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Объем двигателя" />
+                                        <TableColumn fx:id="colorColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Цвет" />
+                                        <TableColumn fx:id="bodyTypeColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="Кузов" />
+                                        <TableColumn fx:id="vinColumn" prefWidth="120.0" style="-fx-text-fill: blue;" text="VIN" />
+                                    </columns>
+                                </TableView>
 
-                         <TextField fx:id="modelOfCar" layoutX="15.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите марку автомобиля" />
-                        <TextField fx:id="typeOfUser" layoutX="304.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите тип лица" />
-                        <TextField fx:id="numberOfCar" layoutX="304.0" layoutY="572.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите гос номер автомобиля" />
-                        <TextField fx:id="nameOfUser" layoutX="607.0" layoutY="570.0" prefHeight="26.0" prefWidth="260.0" promptText="ФИО владельца" />
-                        <TextField fx:id="adressOfUser" layoutX="896.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите адрес владельца" />
-                        <TextField fx:id="valueOfEngine" layoutX="896.0" layoutY="570.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите объем двигателя" />
-                        <ComboBox fx:id="comBoxFirstPage" layoutX="15.0" layoutY="571.0" prefHeight="26.0" prefWidth="263.0" promptText="Выберите тип автомобиля" />
-                        <DatePicker fx:id="dateOfCreatCar" layoutX="606.0" layoutY="630.0" prefHeight="26.0" prefWidth="551.0" promptText="Выберите год выпуска авто" />
-                        <TextField fx:id="typeOfBody" layoutX="17.0" layoutY="630.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите тип кузова" />
-                        <TextField fx:id="numberOfFederation" layoutX="304.0" layoutY="630.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите VIN номер авто" />
-                        <Button layoutX="261.0" layoutY="686.0" mnemonicParsing="false" onAction="#CreateReport" prefHeight="30.0" prefWidth="286.0" text="Добавить информацию о владельце в БД" />
-                        <TextField fx:id="colorOfCar" layoutX="607.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите цвет автомобиля" />
-                        <Button layoutX="610.0" layoutY="686.0" mnemonicParsing="false" onAction="#LooksAtUsers" prefHeight="30.0" prefWidth="286.0" text="Сформировать отчет по выборке" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Фиксация ДТП">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <DatePicker fx:id="DataAccident" layoutX="26.0" layoutY="114.0" prefHeight="26.0" prefWidth="484.0" promptText="Выберите дату аварии" showWeekNumbers="true" />
-                        <ComboBox fx:id="comBoxSecondPage" layoutX="25.0" layoutY="188.0" opacity="0.65" prefHeight="26.0" prefWidth="486.0" promptText="Выберите тип аварии" />
-                        <TextField fx:id="AdressAccident" layoutX="25.0" layoutY="246.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите адрес аварии" />
-                        <TextField fx:id="ModelsAuto" layoutX="25.0" layoutY="307.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите марки автомобилей пострадавших, через запятую" />
-                        <TextField fx:id="SumDamage" layoutX="25.0" layoutY="413.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите сумму ущерба" />
-                        <TextField fx:id="Cause" layoutX="25.0" layoutY="465.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите причину столкновения" />
-                        <TextField fx:id="RoadConditions" layoutX="25.0" layoutY="524.0" prefHeight="26.0" prefWidth="486.0" promptText="Дорожные условия" />
-                        <TextArea fx:id="Report" layoutX="546.0" layoutY="23.0" prefHeight="526.0" prefWidth="701.0" promptText="Отчет об аварии">
-                           <font>
-                              <Font name="Arial" size="18.0" />
-                           </font>
-                        </TextArea>
-                        <TextField fx:id="Category" layoutX="25.0" layoutY="361.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите категорию" />
-                        <Button layoutX="248.0" layoutY="618.0" mnemonicParsing="false" onAction="#CreateRoadAccident" prefHeight="51.0" prefWidth="715.0" text="Зафиксировать прошествие" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Просмотр зафиксированных ДТП">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView layoutX="6.0" layoutY="6.0" prefHeight="505.0" prefWidth="1267.0" style="-fx-border-color: #8b00ff;">
+                                <TextField fx:id="modelOfCar" layoutX="15.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите марку автомобиля" />
+                                <TextField fx:id="typeOfUser" layoutX="304.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите тип лица" />
+                                <TextField fx:id="numberOfCar" layoutX="304.0" layoutY="572.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите гос номер автомобиля" />
+                                <TextField fx:id="nameOfUser" layoutX="607.0" layoutY="570.0" prefHeight="26.0" prefWidth="260.0" promptText="ФИО владельца" />
+                                <TextField fx:id="adressOfUser" layoutX="896.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите адрес владельца" />
+                                <TextField fx:id="valueOfEngine" layoutX="896.0" layoutY="570.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите объем двигателя" />
+                                <ComboBox fx:id="comBoxFirstPage" layoutX="15.0" layoutY="571.0" prefHeight="26.0" prefWidth="263.0" promptText="Выберите тип автомобиля" />
+                                <DatePicker fx:id="dateOfCreatCar" layoutX="606.0" layoutY="630.0" prefHeight="26.0" prefWidth="551.0" promptText="Выберите год выпуска авто" />
+                                <TextField fx:id="typeOfBody" layoutX="17.0" layoutY="630.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите тип кузова" />
+                                <TextField fx:id="numberOfFederation" layoutX="304.0" layoutY="630.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите VIN номер авто" />
+                                <Button layoutX="261.0" layoutY="686.0" mnemonicParsing="false" onAction="#CreateReport" prefHeight="30.0" prefWidth="286.0" text="Добавить информацию о владельце в БД" />
+                                <TextField fx:id="colorOfCar" layoutX="607.0" layoutY="525.0" prefHeight="26.0" prefWidth="260.0" promptText="Введите цвет автомобиля" />
+                                <Button layoutX="610.0" layoutY="686.0" mnemonicParsing="false" onAction="#LooksAtUsers" prefHeight="30.0" prefWidth="286.0" text="Сформировать отчет по выборке" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Фиксация ДТП">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <DatePicker fx:id="DataAccident" layoutX="597.0" layoutY="599.0" prefHeight="26.0" prefWidth="657.0" promptText="Выберите дату аварии" showWeekNumbers="true" />
+                                <ComboBox fx:id="comBoxSecondPage" layoutX="597.0" layoutY="562.0" opacity="0.65" prefHeight="26.0" prefWidth="658.0" promptText="Выберите тип аварии" />
+                                <TextField fx:id="AdressAccident" layoutX="57.0" layoutY="702.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите адрес аварии" />
+                                <TextField fx:id="ModelsAuto" layoutX="595.0" layoutY="638.0" prefHeight="26.0" prefWidth="657.0" promptText="Введите марки пострадавших через запятую" />
+                                <TextField fx:id="SumDamage" layoutX="55.0" layoutY="501.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите сумму ущерба" />
+                                <TextField fx:id="Cause" layoutX="55.0" layoutY="553.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите причину столкновения" />
+                                <TextField fx:id="RoadConditions" layoutX="56.0" layoutY="603.0" prefHeight="26.0" prefWidth="486.0" promptText="Дорожные условия" />
+                                <TextArea fx:id="Report" layoutX="597.0" layoutY="451.0" prefHeight="93.0" prefWidth="658.0" promptText="Отчет об аварии">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </TextArea>
+                                <TextField fx:id="Category" layoutX="55.0" layoutY="449.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите категорию" />
+                                <Button layoutX="592.0" layoutY="676.0" mnemonicParsing="false" onAction="#CreateRoadAccident" prefHeight="20.0" prefWidth="662.0" text="Зафиксировать прошествие" />
+                                <TextField fx:id="NameOfUsersOfAccident" layoutX="56.0" layoutY="655.0" prefHeight="25.0" prefWidth="487.0" promptText="Введите ФИО пострадавших, через запятую" />
+                        <Button layoutX="591.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="663.0" text="Сформировать отчет" />
+                        <TableView fx:id="MyTableSecondPage" layoutX="6.0" layoutY="6.0" prefHeight="430.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Дата" />
-                              <TableColumn prefWidth="132.0" text="Тип столкновения" />
-                              <TableColumn prefWidth="132.0" text="Адрес аварии" />
-                              <TableColumn prefWidth="132.0" text="Марки автомобилей участвующие в ДТП" />
-                              <TableColumn prefWidth="132.0" text="Категория аварии" />
-                              <TableColumn prefWidth="132.0" text="Общая сумма ущерба" />
-                              <TableColumn prefWidth="132.0" text="Причина столкновения" />
-                              <TableColumn prefWidth="132.0" text="Дорожные условия" />
-                              <TableColumn prefWidth="248.0" text="Краткое описание аварии" />
-                          </columns>
-                           <padding>
-                              <Insets left="0" right="0" top="0" />
-                           </padding>
-                        </TableView>
-                        <DatePicker layoutX="14.0" layoutY="532.0" prefHeight="26.0" prefWidth="484.0" promptText="Выберите дату аварии" showWeekNumbers="true" />
-                        <ComboBox fx:id="comBoxThirdPage" layoutX="13.0" layoutY="582.0" opacity="0.65" prefHeight="26.0" prefWidth="486.0" promptText="Выберите тип аварии" />
-                        <TextField layoutX="515.0" layoutY="532.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите адрес аварии" />
-                        <TextField layoutX="515.0" layoutY="583.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите категорию" />
-                        <TextField layoutX="515.0" layoutY="634.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите сумму ущерба" />
-                        <TextField layoutX="515.0" layoutY="675.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите причину столкновения" />
-                        <TextField layoutX="13.0" layoutY="634.0" prefHeight="26.0" prefWidth="486.0" promptText="Дорожные условия" />
-                        <TextField layoutX="14.0" layoutY="675.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите одну из марок участвующих в аварии" />
-                        <Button layoutX="1012.0" layoutY="532.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="254.0" text="Сформировать отчет" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="Просмотр номеров">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView prefHeight="542.0" prefWidth="1280.0" AnchorPane.bottomAnchor="209.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <columns>
-                            <TableColumn prefWidth="528.0" text="Свободные номера" />
-                              <TableColumn prefWidth="569.0" text="Занятые номера" />
+                            <TableColumn fx:id="CategoryAccColumn" prefWidth="79.0" text="Категория" />
+                              <TableColumn fx:id="SumAccidentColumn" prefWidth="108.0" text="Сумма ущерба" />
+                              <TableColumn fx:id="CouseAccColumn" prefWidth="130.0" text="Причина столкновения" />
+                              <TableColumn fx:id="RoadConditionsAccColumn"  prefWidth="138.0" text="Дорожные условия" />
+                              <TableColumn fx:id="NameAccColumn" prefWidth="129.0" text="ФИО Пострадавших" />
+                              <TableColumn fx:id="AdressAccColumn" prefWidth="131.0" text="Адрес аварии" />
+                              <TableColumn fx:id="TypeAccColumn" prefWidth="111.0" text="Тип аварии" />
+                              <TableColumn fx:id="DateAcc" prefWidth="110.0" text="Дата" />
+                              <TableColumn fx:id="ModelsAccColumn" prefWidth="159.0" text="Марки пострадавших авто" />
+                              <TableColumn fx:id="ReportAccColumn" prefWidth="285.0" text="Краткий отчет об аварии" />
                           </columns>
                         </TableView>
-                        <Button layoutX="399.0" layoutY="580.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="483.0" text="Сформировать отчет по свободным номерам" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Просмотр номеров">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView prefHeight="542.0" prefWidth="1280.0" AnchorPane.bottomAnchor="209.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn prefWidth="528.0" text="Свободные номера" />
+                                        <TableColumn prefWidth="569.0" text="Занятые номера" />
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="399.0" layoutY="580.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="483.0" text="Сформировать отчет по свободным номерам" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </AnchorPane>
