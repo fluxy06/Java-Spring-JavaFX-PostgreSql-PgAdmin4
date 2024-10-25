@@ -4,7 +4,6 @@ package pack.com.example.demo;
 import javafx.application.Application;
 
 import java.sql.*;
-import java.sql.Date;
 import java.time.LocalDate;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,10 +20,10 @@ import java.util.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 //import jdk.vm.ci.meta.Local;
-import org.checkerframework.checker.units.qual.A;
+
 
 public class Main extends Application {
-
+    //Объявление переменных для корректной работы
     //#region Запись информации для подключения
     static String url = "jdbc:postgresql://Nikita-MSI:5432/TrafficsPoliceDataBase";
     static String name = "postgres";
@@ -85,6 +84,16 @@ public class Main extends Application {
     private TableColumn<Acidenst, String> SumAccidentColumn; // Сумма ущерба
     //#endregion
 
+    //#region Создание столбцов для работы с таблицей Свободных И занятых номеров
+    @FXML
+    private TableView<CarNumberStatus> NumbersColumn; // переменная всей таблицы в целом
+    // каким образом работает: Получается, выбираем столбец, задаем значение, задаем навзание переменной
+    @FXML
+    private TableColumn<CarNumberStatus, String> FreeNumbersColumn; // свободные номера
+    @FXML
+    private TableColumn<CarNumberStatus, String> BusyNumbersColumn; // занятые номера
+    //#endregion
+
     //#region Объявление выпадающих списков для добавления в них информации
     @FXML
     private ComboBox<String> comBoxFirstPage;
@@ -137,7 +146,7 @@ public class Main extends Application {
     @FXML
     private TextField NameOfUsersOfAccident; // ФИО пострадавших
     //#endregion
-
+    //Запуск программы
     //#region запуск приложения
     public static void main(String[] args) {
         launch(args);
@@ -216,9 +225,11 @@ public class Main extends Application {
                 valueEngine, carColor, typeBody, vinNumber);
 
         // Переходим к записи данных в базу данных
-        String sqlInsert = "INSERT INTO \"InformationOfUsers\" (\"Model\", \"TypeOfCar\", \"TypeOfBody\", \"TypeOfUser\", \"FederationNumber\", \"VinNumber\", \"DateCreate\", \"NameOfUser\", \"Adress\", \"ValueEngine\", \"Color\") " +
+        String sqlInsert = "INSERT INTO \"InformationOfUsers\" (\"Model\", \"TypeOfCar\", \"TypeOfBody\", \"TypeOfUser\", \"FederationNumber\", \"VinNumber\", \"DateCreated\", \"NameOfUser\", \"Adress\", \"ValueEngine\", \"Color\") " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
                 "ON CONFLICT (\"VinNumber\", \"FederationNumber\") DO NOTHING";
+
+        //String sqlInsert2 = "INSERT INTO \"NumbersOfCars\" (Status) VALUES (?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sqlInsert)) {
@@ -234,13 +245,54 @@ public class Main extends Application {
             pstmt.setString(9, userAdres);
             pstmt.setString(10, valueEngine);
             pstmt.setString(11, carColor);
-
             pstmt.executeUpdate();
             System.out.println("Данные успешно добавлены или уже существуют.");
+            //addIntoTableWithNumbers(sqlInsert2);
         } catch (SQLException e) {
             System.out.println("Ошибка при добавлении данных в базу данных: " + e.getMessage());
             e.printStackTrace();
         }
+
+
+    }
+    //#endregion
+
+    //region Вспомогательная функция для вывода информации в таблицу
+    public ObservableList<CarNumberStatus> getNumbers() {
+        ObservableList<CarNumberStatus> numbersList = FXCollections.observableArrayList();
+
+        String sql1 = "SELECT \"FederationNumber\" FROM public.\"InformationOfUsers\"";
+        String sql2 = "SELECT \"Number\" FROM public.\"NumbersOfCars\"";
+
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement()) {
+
+            // Выполнение первого запроса (свободные номера)
+            ResultSet rs1 = stmt.executeQuery(sql1);
+            while (rs1.next()) {
+                String federationNumber = rs1.getString("FederationNumber");
+                numbersList.add(new CarNumberStatus(federationNumber, null)); // Добавляем только свободный номер
+            }
+
+            // Выполнение второго запроса (занятые номера)
+            ResultSet rs2 = stmt.executeQuery(sql2);
+            while (rs2.next()) {
+                String carNumber = rs2.getString("Number");
+                numbersList.add(new CarNumberStatus(null, carNumber)); // Добавляем только занятый номер
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Ошибка при выполнении запроса к базе данных.");
+            e.printStackTrace();
+        }
+
+        return numbersList;
+    }
+    //#endregion
+
+    //#region Функция добавления занятого номера в таблицу с номерами
+    public void addIntoTableWithNumbers() {
+
     }
     //#endregion
 
@@ -390,8 +442,8 @@ public class Main extends Application {
     //#endregion
 
     //#region Вспомогательная функция для метода вывода информации о ДТП
-    /*public ObservableList<Acidenst> executeQueryAndGetDataAcc(String sql) {
-        ObservableList<Acidenst> data = FXCollections.observableArrayList();
+    public ObservableList<Acidenst> executeQueryAndGetDataAcc(String sql) {
+        ObservableList<Acidenst> data2 = FXCollections.observableArrayList();
         try (Connection conn = DriverManager.getConnection(url, name, pass);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -412,7 +464,7 @@ public class Main extends Application {
                 Acidenst accInfo = new Acidenst(Accdata, modelsAuto, cause, report, adress, sumDamage, conditions, category, typeAccident, nameOfUsersOfAccident);
 
                 // Добавляем объект в список данных
-                data.add(accInfo);
+                data2.add(accInfo);
             }
 
         } catch (SQLException e) {
@@ -420,21 +472,65 @@ public class Main extends Application {
             // Обработка ошибок подключения и запроса
         }
 
-        return data;
+        return data2;
     }
     //#endregion
 
-        //#region Функция для формирования отчета по авариям для таблицы ДТП
+    //#region Функция для формирования отчета по авариям для таблицы ДТП
         @FXML
         public void LookAtAccidents () {
+            // Записываем в переменные данные, введенные пользователем
+            StrinMethods meth = new StrinMethods();
+            LocalDate dataCr = DataAccident.getValue();
+            String models = ModelsAuto.getText();
+            String sumDamage = SumDamage.getText();
+            String cause = Cause.getText();
+            String roadConditions = RoadConditions.getText();
+            String typAccident = getTypeAccident();
+            String category = Category.getText();
+            String adressAccident = AdressAccident.getText();
+            String report = Report.getText();
+            String nameUsers = NameOfUsersOfAccident.getText();
 
+            // Создаем список с названиями столбцов из БД
+            List<String> allColumnNames2 = new ArrayList<>();
+            meth.addColumnNamesAccident(allColumnNames2); // Добавили все названия столбцов
+
+            // Создаем список со всеми введенными значениями
+            List<String> allInputValues = new ArrayList<>();
+            meth.addValuesIntoTableAccidents(models, sumDamage, cause, roadConditions, typAccident, category,
+                    adressAccident, report, nameUsers, allInputValues);
+
+            // Создаем мапу для хранения непустых значений
+            Map<String, String> listNoNullValues2 = new HashMap<>();
+            meth.addNewValuesNoneNullIntoList(allInputValues, listNoNullValues2, allColumnNames2); // Прогоняем список и добавляем непустые значения в мапу
+
+            System.out.println(listNoNullValues2); // Для отладки: выводим список непустых значений
+
+            // Генерируем SQL-запрос
+            String sql = meth.generateSelectQuery("public.\"TrafficAccidents\"", listNoNullValues2, dataCr);
+            System.out.println(sql); // Для отладки: выводим запрос на экран
+
+            // Выполняем запрос и получаем данные
+            ObservableList<Acidenst> data = executeQueryAndGetDataAcc(sql); // Передаем SQL-запрос в метод
+
+            // Устанавливаем полученные данные в таблицу
+            MyTableSecondPage.setItems(data);
         }
 
-        */
         //#endregion
 
-        // Тут они заканчиваются
-        //#region Создаем слушатель событий для первой страницы с выпдающим списком
+    //#region Функция добавления свободных и занятых номеров в таблицу
+    @FXML
+    public void LooksAtNumbers() {
+        // Получаем данные о свободных и занятых номерах
+        ObservableList<CarNumberStatus> numbersList = getNumbers();
+        // Устанавливаем данные в таблицу
+        NumbersColumn.setItems(numbersList);
+    }
+    //#endregion
+    // Выпадающие списки
+    //#region Создаем слушатель событий для первой страницы с выпдающим списком
         private String typeAuto;
 
 
@@ -445,15 +541,15 @@ public class Main extends Application {
 
         //#endregion
 
-        //#region Создаем слушатель для второй страницы с выпадающим списком
+    //#region Создаем слушатель для второй страницы с выпадающим списком
         private String typeAccident;
 
         private String getTypeAccident () {
             return typeAccident;
         }
         //#endregion
-
-        //#region Инициализация приложения
+    // Инициализация программы и её модулей, также подключение к БД(Базе данных)
+    //#region Инициализация приложения
         @FXML
         public void initialize () {
             // Инициализация ComboBox
@@ -469,10 +565,11 @@ public class Main extends Application {
             });
             initializeTableColumns();
             initializeTableAccidentColumns();
+            initializeTableNumbersColumns();
         }
         //#endregion
 
-        //#region Подключение к БД
+    //#region Подключение к БД
         public static Connection connect () {
             Connection connection = null;
             try {
@@ -486,7 +583,7 @@ public class Main extends Application {
         }
         //#endregion
 
-        //#region функция инициализации столбцов
+    //#region функция инициализации столбцов
         public void initializeTableColumns () {
             carBrandColumn.setCellValueFactory(new PropertyValueFactory<>("carBrand"));
             carTypeColumn.setCellValueFactory(new PropertyValueFactory<>("carType"));
@@ -502,17 +599,25 @@ public class Main extends Application {
         }
         //#endregion
 
-        //#region функция инициализации столбцов 2
+    //#region функция инициализации столбцов 2
     public void initializeTableAccidentColumns () {
         TypeAccColumn.setCellValueFactory(new PropertyValueFactory<>("typeAccident"));
-        AdressAccColumn.setCellValueFactory(new PropertyValueFactory<>("adressAccident"));
+        AdressAccColumn.setCellValueFactory(new PropertyValueFactory<>("adress"));
         ModelsAccColumn.setCellValueFactory(new PropertyValueFactory<>("modelsAuto"));
         CategoryAccColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
-        SumAccidentColumn.setCellValueFactory(new PropertyValueFactory<>("sumDamage"));
+        DateAcc.setCellValueFactory(new PropertyValueFactory<>("data")); // LocalDate
         CouseAccColumn.setCellValueFactory(new PropertyValueFactory<>("cause"));
-        RoadConditionsAccColumn.setCellValueFactory(new PropertyValueFactory<>("roadConditions"));
+        RoadConditionsAccColumn.setCellValueFactory(new PropertyValueFactory<>("conditions"));
         ReportAccColumn.setCellValueFactory(new PropertyValueFactory<>("report"));
-        NameAccColumn.setCellValueFactory(new PropertyValueFactory<>("nameOfUsers"));
+        NameAccColumn.setCellValueFactory(new PropertyValueFactory<>("nameOfUsersOfAccident"));
+        SumAccidentColumn.setCellValueFactory(new PropertyValueFactory<>("sumDamage"));
+    }
+    //#endregion
+
+    //#region функция инициализации столбцов 2
+    public void initializeTableNumbersColumns () {
+        FreeNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("freeNumber"));
+        BusyNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("busyNumber"));
     }
     //#endregion
 
@@ -571,16 +676,16 @@ public class Main extends Application {
 
         //#region Функция добавления названия столбцов для таблицы с ДТП
         public void addColumnNamesAccident(List<String> ColumnNames) {
-            ColumnNames.add("DateAccColumn");
-            ColumnNames.add("TypeAccColumn");
-            ColumnNames.add("AdressAccColumn");
-            ColumnNames.add("ModelsAccColumn");
-            ColumnNames.add("CategoryAccColumn");
-            ColumnNames.add("SumAccColumn");
-            ColumnNames.add("CouseAccColumn");
-            ColumnNames.add("RoadConditionsAccColumn");
-            ColumnNames.add("ReportAccColumn");
-            ColumnNames.add("NameAccColumn");
+            ColumnNames.add("ModelsAuto");
+            ColumnNames.add("SumDamage");
+            ColumnNames.add("Cause");
+            ColumnNames.add("RoadConditions");
+            ColumnNames.add("TypeAccident");
+            ColumnNames.add("Category");
+            ColumnNames.add("AdressAccident");
+            ColumnNames.add("Report");
+            ColumnNames.add("NameOfUsersOfAccident");
+            ColumnNames.add("DataAccident");
         }
         //#endregion
 
