@@ -72,7 +72,7 @@
                                 <TextField fx:id="Category" layoutX="55.0" layoutY="449.0" prefHeight="26.0" prefWidth="486.0" promptText="Введите категорию" />
                                 <Button layoutX="592.0" layoutY="676.0" mnemonicParsing="false" onAction="#CreateRoadAccident" prefHeight="20.0" prefWidth="662.0" text="Зафиксировать прошествие" />
                                 <TextField fx:id="NameOfUsersOfAccident" layoutX="56.0" layoutY="655.0" prefHeight="25.0" prefWidth="487.0" promptText="Введите ФИО пострадавших, через запятую" />
-                        <Button layoutX="591.0" layoutY="711.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="663.0" text="Сформировать отчет" />
+                        <Button layoutX="591.0" layoutY="711.0" onAction="#LookAtAccidents" mnemonicParsing="false" prefHeight="25.0" prefWidth="663.0" text="Сформировать отчет" />
                         <TableView fx:id="MyTableSecondPage" layoutX="6.0" layoutY="6.0" prefHeight="430.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="CategoryAccColumn" prefWidth="79.0" text="Категория" />
@@ -94,13 +94,13 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <TableView prefHeight="542.0" prefWidth="1280.0" AnchorPane.bottomAnchor="209.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <TableView fx:id="NumbersColumn" prefHeight="542.0" prefWidth="1280.0" AnchorPane.bottomAnchor="209.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <columns>
-                                        <TableColumn prefWidth="528.0" text="Свободные номера" />
-                                        <TableColumn prefWidth="569.0" text="Занятые номера" />
+                                        <TableColumn fx:id="FreeNumbersColumn" prefWidth="528.0" text="Занятые номера" />
+                                        <TableColumn fx:id="BusyNumbersColumn" prefWidth="569.0" text="Свободные номера" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="399.0" layoutY="580.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="483.0" text="Сформировать отчет по свободным номерам" />
+                                <Button onAction="#LooksAtNumbers" layoutX="399.0" layoutY="580.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="483.0" text="Сформировать отчет по свободным номерам" />
                             </children>
                         </AnchorPane>
                     </content>
