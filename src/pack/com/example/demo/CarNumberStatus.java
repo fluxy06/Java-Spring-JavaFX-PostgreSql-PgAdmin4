@@ -1,27 +1,17 @@
 package pack.com.example.demo;
 
 public class CarNumberStatus {
-    private String freeNumber; // Поле для свободного номера
-    private String busyNumber; // Поле для занятого номера
+    private String number; // Поле для хранения номера (свободного или занятого)
 
-    public CarNumberStatus(String freeNumber, String busyNumber) {
-        this.freeNumber = freeNumber;
-        this.busyNumber = busyNumber;
+    public CarNumberStatus(String number) {
+        this.number = number;
     }
 
-    public String getFreeNumber() {
-        return freeNumber;
+    public String getNumber() {
+        return number;
     }
 
-    public void setFreeNumber(String freeNumber) {
-        this.freeNumber = freeNumber;
-    }
-
-    public String getBusyNumber() {
-        return busyNumber;
-    }
-
-    public void setBusyNumber(String busyNumber) {
-        this.busyNumber = busyNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

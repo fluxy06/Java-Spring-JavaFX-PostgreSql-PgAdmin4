@@ -1,24 +1,25 @@
 //Для архитектуры проекта правильной создал по рекомендациям несколько папок и обернул все в пакет
 package pack.com.example.demo;
 //Библиотека для работы с javaFX
-import javafx.application.Application;
 
-import java.sql.*;
-import java.time.LocalDate;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.fxml.FXML; // Импорт аннотации FXML
-//import sun.util.resources.LocaleData;
-// Библиотеки для работы с БД и Исключениями
+
 import java.io.IOException;
-import java.util.*;
-// Для записи данных в табличку БД
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 //import jdk.vm.ci.meta.Local;
 
 
@@ -89,9 +90,7 @@ public class Main extends Application {
     private TableView<CarNumberStatus> NumbersColumn; // переменная всей таблицы в целом
     // каким образом работает: Получается, выбираем столбец, задаем значение, задаем навзание переменной
     @FXML
-    private TableColumn<CarNumberStatus, String> FreeNumbersColumn; // свободные номера
-    @FXML
-    private TableColumn<CarNumberStatus, String> BusyNumbersColumn; // занятые номера
+    private TableColumn<CarNumberStatus, String> FreeNumbersColumn; // свободные номера// занятые номера
     //#endregion
 
     //#region Объявление выпадающих списков для добавления в них информации
@@ -260,39 +259,44 @@ public class Main extends Application {
     //region Вспомогательная функция для вывода информации в таблицу
     public ObservableList<CarNumberStatus> getNumbers() {
         ObservableList<CarNumberStatus> numbersList = FXCollections.observableArrayList();
-
         String sql1 = "SELECT \"FederationNumber\" FROM public.\"InformationOfUsers\"";
-        String sql2 = "SELECT \"Number\" FROM public.\"NumbersOfCars\"";
 
         try (Connection conn = connect();
              Statement stmt = conn.createStatement()) {
-
-            // Выполнение первого запроса (свободные номера)
             ResultSet rs1 = stmt.executeQuery(sql1);
             while (rs1.next()) {
                 String federationNumber = rs1.getString("FederationNumber");
-                numbersList.add(new CarNumberStatus(federationNumber, null)); // Добавляем только свободный номер
+                if (federationNumber != null && !federationNumber.trim().isEmpty()) {
+                    numbersList.add(new CarNumberStatus(federationNumber));
+                }
             }
-
-            // Выполнение второго запроса (занятые номера)
-            ResultSet rs2 = stmt.executeQuery(sql2);
-            while (rs2.next()) {
-                String carNumber = rs2.getString("Number");
-                numbersList.add(new CarNumberStatus(null, carNumber)); // Добавляем только занятый номер
-            }
-
         } catch (SQLException e) {
             System.out.println("Ошибка при выполнении запроса к базе данных.");
             e.printStackTrace();
         }
-
         return numbersList;
     }
     //#endregion
 
-    //#region Функция добавления занятого номера в таблицу с номерами
-    public void addIntoTableWithNumbers() {
+    //#region Вспомогательная для занятых
+    public ObservableList<CarNumberStatus> getNumbers2() {
+        ObservableList<CarNumberStatus> numbersList = FXCollections.observableArrayList();
+        String sql2 = "SELECT \"Number\" FROM public.\"NumbersOfCars\"";
 
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement()) {
+            ResultSet rs2 = stmt.executeQuery(sql2);
+            while (rs2.next()) {
+                String carNumber = rs2.getString("Number");
+                if (carNumber != null && !carNumber.trim().isEmpty()) {
+                    numbersList.add(new CarNumberStatus(carNumber));
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Ошибка при выполнении запроса к базе данных.");
+            e.printStackTrace();
+        }
+        return numbersList;
     }
     //#endregion
 
@@ -520,12 +524,22 @@ public class Main extends Application {
 
         //#endregion
 
-    //#region Функция добавления свободных и занятых номеров в таблицу
+    //#region Функция добавления свободных номеров в таблицу
     @FXML
     public void LooksAtNumbers() {
         // Получаем данные о свободных и занятых номерах
         ObservableList<CarNumberStatus> numbersList = getNumbers();
         // Устанавливаем данные в таблицу
+        NumbersColumn.setItems(numbersList);
+    }
+    //#endregion
+    //#region Функция добавления занятых номеров в таблицу
+    @FXML
+    public void LooksAtNumbers2() {
+        // Получаем данные о занятых номерах
+        ObservableList<CarNumberStatus> numbersList = getNumbers2();
+        // Устанавливаем данные в таблицу
+        FreeNumbersColumn.setText("Свободные номера");
         NumbersColumn.setItems(numbersList);
     }
     //#endregion
@@ -616,8 +630,9 @@ public class Main extends Application {
 
     //#region функция инициализации столбцов 2
     public void initializeTableNumbersColumns () {
-        FreeNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("freeNumber"));
-        BusyNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("busyNumber"));
+        FreeNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
+        //BusyNumbersColumn.setCellValueFactory(new PropertyValueFactory<>("busyNumber"));
+
     }
     //#endregion
 
