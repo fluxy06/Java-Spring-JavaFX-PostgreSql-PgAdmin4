@@ -16,10 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 //import jdk.vm.ci.meta.Local;
 
 
@@ -185,6 +182,17 @@ public class Main extends Application {
     private void CreateReport() {
         // Создаем объект нашего класса проверки строк
         StrinMethods meth = new StrinMethods();
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Random random = new Random();
+        Alert alertTrue = new Alert(Alert.AlertType.INFORMATION);
+        int randomNumber = random.nextInt(999) + 1;
+        alertTrue.setContentText("Добавление информации успешно выполнено!");
+        alertTrue.setTitle("Оповещение");
+        alertTrue.setContentText("Сообщение об успешном выполнении функции.");
+        alert.setTitle("Ошибка: " + randomNumber);
+        alert.setHeaderText("Произошла ошибка");
+        alert.setContentText("Похоже произошла ошибка, попробуйте заполнить все поля, для добавления информации в БД" +
+                ". Также я бы посоветовал убедиться в корректности сохраняемых данных");
 
         // Записываем в переменные данные, введенные пользователем
         String name = nameOfUser.getText();
@@ -208,13 +216,13 @@ public class Main extends Application {
                 meth.isNullOrEmpty(typeUser) || meth.isNullOrEmpty(valueEngine) || meth.isNullOrEmpty(typeBody) ||
                 meth.isNullOrEmpty(vinNumber) || dateCreated == null || meth.isNullOrEmpty(carColor) ||
                 meth.isNullOrEmpty(userAdres) || meth.isNullOrEmpty(typeAuto)) {
-            System.out.println("Одно или несколько полей пустые.");
+            alert.showAndWait();
             return; // Останавливаем выполнение функции в случае, если одно из полей пустое
         }
 
         // Проверяем корректность даты
         if (dateCreated.isAfter(currentDate)) {
-            System.out.println("Выбранная дата является некорректной.");
+            alert.showAndWait();
             return;
         }
         //#endregion
@@ -245,10 +253,12 @@ public class Main extends Application {
             pstmt.setString(10, valueEngine);
             pstmt.setString(11, carColor);
             pstmt.executeUpdate();
-            System.out.println("Данные успешно добавлены или уже существуют.");
             //addIntoTableWithNumbers(sqlInsert2);
+            alertTrue.showAndWait();
         } catch (SQLException e) {
-            System.out.println("Ошибка при добавлении данных в базу данных: " + e.getMessage());
+            String exp = e.getMessage();
+            alert.setContentText(exp);
+            alert.showAndWait();
             e.printStackTrace();
         }
 
@@ -258,6 +268,8 @@ public class Main extends Application {
 
     //region Вспомогательная функция для вывода информации в таблицу
     public ObservableList<CarNumberStatus> getNumbers() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
         ObservableList<CarNumberStatus> numbersList = FXCollections.observableArrayList();
         String sql1 = "SELECT \"FederationNumber\" FROM public.\"InformationOfUsers\"";
 
@@ -271,8 +283,9 @@ public class Main extends Application {
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Ошибка при выполнении запроса к базе данных.");
+            alert.setContentText(e.getMessage());
             e.printStackTrace();
+            alert.showAndWait();
         }
         return numbersList;
     }
@@ -295,6 +308,10 @@ public class Main extends Application {
         } catch (SQLException e) {
             System.out.println("Ошибка при выполнении запроса к базе данных.");
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
         }
         return numbersList;
     }
@@ -324,13 +341,17 @@ public class Main extends Application {
                 meth.isNullOrEmpty(cause) ||
                 meth.isNullOrEmpty(category) || data == null || meth.isNullOrEmpty(adressAccident) ||
                 meth.isNullOrEmpty(report)) {
-            System.out.println("Одно или несколько полей пустые.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText("Одно или несколько полей пустые! Пожалуйста, заполните все поля");
             return; // Останавливаем выполнение функции в случае, если одно из полей пустое
         }
 
         // Проверяем корректность даты
         if (data.isAfter(currentDate)) {
-            System.out.println("Выбранная дата является некорректной.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText("Одно или несколько полей пустые! Пожалуйста, заполните все поля");
             return;
         }
         //#endregion
@@ -359,9 +380,13 @@ public class Main extends Application {
             pstmt.setString(10, nameUsers);                        // NameOfUsersInAccident
 
             pstmt.executeUpdate();
-            System.out.println("Данные успешно добавлены или уже существуют.");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Оповещение");
+            alert.setContentText("Данные были успешно добавлены.");
         } catch (SQLException e) {
-            System.out.println("Ошибка при добавлении данных в базу данных: " + e.getMessage());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
             e.printStackTrace();
         }
 
@@ -395,6 +420,10 @@ public class Main extends Application {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
             // Обработка ошибок подключения и запроса
         }
 
@@ -442,6 +471,11 @@ public class Main extends Application {
 
         // Устанавливаем полученные данные в таблицу
         MyTableFirstPage.setItems(data);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Оповещение");
+        alert.setContentText("Данные по вашему запросу были успешно загружены в таблицу, если таблица пустая, это значит " +
+                "по запрошенным вами данным в БД никаких записей не обнаружено.");
+        alert.showAndWait();
     }
     //#endregion
 
@@ -473,6 +507,10 @@ public class Main extends Application {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait();
             // Обработка ошибок подключения и запроса
         }
 
@@ -499,7 +537,6 @@ public class Main extends Application {
             // Создаем список с названиями столбцов из БД
             List<String> allColumnNames2 = new ArrayList<>();
             meth.addColumnNamesAccident(allColumnNames2); // Добавили все названия столбцов
-
             // Создаем список со всеми введенными значениями
             List<String> allInputValues = new ArrayList<>();
             meth.addValuesIntoTableAccidents(models, sumDamage, cause, roadConditions, typAccident, category,
@@ -520,6 +557,11 @@ public class Main extends Application {
 
             // Устанавливаем полученные данные в таблицу
             MyTableSecondPage.setItems(data);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Оповещение");
+            alert.setContentText("Данные по вашему запросу были успешно загружены в таблицу, если таблица пустая, это " +
+                    "означает что по вашим данным записей в БД не обнаружено.");
+            alert.showAndWait();
         }
 
         //#endregion
@@ -590,8 +632,11 @@ public class Main extends Application {
                 connection = DriverManager.getConnection(url, name, pass);
                 System.out.println("Подключение успешно выполнено!");
             } catch (SQLException e) {
-                System.out.println("Видимо произошла ошибка..");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ошибка");
+                alert.setContentText(e.getMessage());
                 e.printStackTrace();
+                alert.showAndWait();
             }
             return connection;
         }
@@ -727,7 +772,6 @@ public class Main extends Application {
             // Строим часть для столбцов и значений
             StringBuilder whereClause = new StringBuilder();
             boolean first = true;
-
             // Добавляем параметры из data
             for (Map.Entry<String, String> entry : data.entrySet()) {
                 if (!first) {
@@ -749,4 +793,11 @@ public class Main extends Application {
             return "SELECT * FROM " + tableName + " WHERE " + whereClause.toString() + ";";
         }
         //#endregion
+
+        //#region Метод для проверки поля на то что в нем только символы
+        public boolean isOnlyLetters(String input) {
+            return input.chars().allMatch(Character::isLetter);
+        }
+        //#endregion
+
     }
