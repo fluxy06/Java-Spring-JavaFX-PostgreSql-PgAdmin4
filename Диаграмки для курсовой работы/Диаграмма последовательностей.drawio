@@ -1,0 +1,160 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Страница — 1" id="h_MH2gf0QxPsJ7qTuWZt">
+    <mxGraphModel dx="2390" dy="1473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-1" target="NTXzlqoxS3PREo5qSYJQ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-1" target="NTXzlqoxS3PREo5qSYJQ-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-1" value="Пользователь&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="180" width="90" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="360" y="170" width="620" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-5" value="Форма добавления информации и просмотра по новым зарегистрированным автомообилям" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="180" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-6" target="NTXzlqoxS3PREo5qSYJQ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-6" value="Ввод информации в поля" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="220" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-7" target="NTXzlqoxS3PREo5qSYJQ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-7" target="NTXzlqoxS3PREo5qSYJQ-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-7" value="Проверка нажатой кнопки" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="290" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-9" target="NTXzlqoxS3PREo5qSYJQ-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-9" value="&quot;Сформировать отчет&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="430" y="360" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-11" target="NTXzlqoxS3PREo5qSYJQ-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-11" value="Добавить информацию&lt;div&gt;о владельце автомобиля&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="850" y="360" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-16" target="NTXzlqoxS3PREo5qSYJQ-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-16" value="Обработка на сервере информации и её сохранение" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="700" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-18" value="Сообщение пользователю о том что информация зафиксировна, сообщение об ошибке - в случае оишбки" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="770" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-20" target="NTXzlqoxS3PREo5qSYJQ-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-20" value="Обработка на сервере информации и передача полученной информации с сервера в приложение&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="500" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-22" value="Информация по запросу выводится на таблицу, также появляется сообщение о статусе вывода, в случае ошибки произойдет вывод ошибки" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="440" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-43" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="170" width="620" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-44" value="Форма добавления информации и просмотра зарегистрированные ДТП , а также регистрация новых" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="190" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-46" target="NTXzlqoxS3PREo5qSYJQ-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-46" value="Ввод информации в поля" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="230" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-49" target="NTXzlqoxS3PREo5qSYJQ-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-49" target="NTXzlqoxS3PREo5qSYJQ-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-49" value="Проверка нажатой кнопки" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="300" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-51" target="NTXzlqoxS3PREo5qSYJQ-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-51" value="&quot;Сформировать отчет&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="370" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-53" target="NTXzlqoxS3PREo5qSYJQ-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-53" value="Добавить информацию&lt;div&gt;о новом ДТП&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="370" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-55" target="NTXzlqoxS3PREo5qSYJQ-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-55" value="Обработка на сервере информации и её сохранение" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-56" value="Сообщение пользователю о том что информация зафиксировна, сообщение об ошибке - в случае оишбки" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="660" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-58" target="NTXzlqoxS3PREo5qSYJQ-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-58" value="Обработка на сервере информации и передача полученной информации с сервера в приложение&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-59" value="Информация по запросу выводится на таблицу, также появляется сообщение о статусе вывода, в случае ошибки произойдет вывод ошибки" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-1" target="NTXzlqoxS3PREo5qSYJQ-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-61" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="360" y="830" width="330" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-63" value="Отчет по свободным номерам" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="840" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-64" target="NTXzlqoxS3PREo5qSYJQ-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-64" value="Проверка нажатой кнопки" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="467.5" y="890" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-66" value="Сформировать отчет по свободным номерам" style="rhombus;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="390" y="950" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-67" value="Сформировать отчет по занятым номерам" style="rhombus;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="610" y="950" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.551;entryY=0.11;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-64" target="NTXzlqoxS3PREo5qSYJQ-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-70" target="NTXzlqoxS3PREo5qSYJQ-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-70" value="Запрос к БД на основе нажатой кнопки" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="497.5" y="980" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=27.5;entryPerimeter=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-66" target="NTXzlqoxS3PREo5qSYJQ-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.926;entryY=0.272;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NTXzlqoxS3PREo5qSYJQ-67" target="NTXzlqoxS3PREo5qSYJQ-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NTXzlqoxS3PREo5qSYJQ-73" value="Вывод информации по номерам в таблицу, также соответственно сообщение об успешном выводе или же ошибки." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="437.5" y="1080" width="182.5" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

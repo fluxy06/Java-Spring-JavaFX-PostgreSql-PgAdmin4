@@ -1,0 +1,175 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="b520641d-4fe3-3701-9064-5fc419738815">
+    <mxGraphModel dx="3149" dy="1263" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HU5OMO_x2d4uz_9USynd-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=1 2;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;" edge="1" parent="1" source="21ea969265ad0168-10" target="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=1 1;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;" edge="1" parent="1" source="21ea969265ad0168-10" target="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="21ea969265ad0168-10" target="HU5OMO_x2d4uz_9USynd-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;" edge="1" parent="1" source="21ea969265ad0168-10" target="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21ea969265ad0168-10" value="Администратор - Пользователь&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="170" y="100" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-6" value="Владелец автомобиля" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="170" y="310" width="220" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-7" value="ФИО" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="26" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-8" value="Адресс проживания" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="52" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-9" value="Марка автомобиля" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="78" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-10" value="Тип кузова" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="104" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-11" value="Тип ТС" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="140" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-12" value="Дата сборки автомобиля" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="170" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-13" value="Тип лица владельца авто&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="206" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-14" value="&lt;div&gt;Цвет автомобиля&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="242" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-15" value="&lt;div&gt;Объем двигателя&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="278" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-16" value="&lt;div&gt;VIN номер автомобиля&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-6">
+          <mxGeometry y="314" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-20" value="Заявка поступившая с места происшетсвия ДТП для фиксации" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="490" y="310" width="350" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-21" value="ФИО пострадавших" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="26" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-22" value="Адресс пострадавших" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="52" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-23" value="Марки автомобилей" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="78" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-24" value="Тип кузова" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="104" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-25" value="Категория аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="140" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-26" value="Сумма ущерба" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="170" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-27" value="&lt;div&gt;Причина столкновения&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="206" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-28" value="&lt;div&gt;Дорожные условия&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="242" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-29" value="&lt;div&gt;Тип аварии&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="278" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-30" value="Дата аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="314" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-32" value="Отчет по аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-20">
+          <mxGeometry y="350" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-33" value="Владелец автомобиля" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-110" y="630" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-34" value="Свободные номера" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-33">
+          <mxGeometry y="26" width="220" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-35" value="Занятые номера" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-33">
+          <mxGeometry y="52" width="220" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1.003;entryY=1.059;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmandOne;startFill=0;endArrow=ERmandOne;endFill=0;dashed=1;dashPattern=1 2;" edge="1" parent="1" source="HU5OMO_x2d4uz_9USynd-6" target="HU5OMO_x2d4uz_9USynd-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-58" value="Гос запросы по поиску авто владельцев - дтп происшествий" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-530" y="200" width="350" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-59" value="ФИО пострадавших" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="26" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-60" value="Адресс пострадавших" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="52" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-61" value="Марки автомобилей" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="78" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-62" value="Тип кузова" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="104" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-63" value="Категория аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="140" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-64" value="Сумма ущерба" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="170" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-65" value="&lt;div&gt;Причина столкновения&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="206" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-66" value="&lt;div&gt;Дорожные условия&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="242" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-67" value="&lt;div&gt;Тип аварии&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="278" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-68" value="Дата аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="314" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-69" value="Отчет по аварии" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="350" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-70" value="ФИО" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="390" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-71" value="Адресс проживания" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="416" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-72" value="Марка автомобиля" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="442" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-73" value="Тип ТС" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="468" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-74" value="Дата сборки автомобиля" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="498" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-75" value="Тип лица владельца авто&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="534" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-76" value="&lt;div&gt;Цвет автомобиля&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="570" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-77" value="&lt;div&gt;Объем двигателя&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="606" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-78" value="&lt;div&gt;VIN номер автомобиля&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="642" width="350" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-79" value="Свободные номера" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="678" width="350" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HU5OMO_x2d4uz_9USynd-80" value="Занятые номера" style="text;html=1;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="HU5OMO_x2d4uz_9USynd-58">
+          <mxGeometry y="704" width="350" height="46" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
