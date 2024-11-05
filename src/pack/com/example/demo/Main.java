@@ -344,6 +344,7 @@ public class Main extends Application {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ошибка");
             alert.setContentText("Одно или несколько полей пустые! Пожалуйста, заполните все поля");
+            alert.showAndWait();
             return; // Останавливаем выполнение функции в случае, если одно из полей пустое
         }
 
@@ -352,6 +353,7 @@ public class Main extends Application {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ошибка");
             alert.setContentText("Одно или несколько полей пустые! Пожалуйста, заполните все поля");
+            alert.showAndWait();
             return;
         }
         //#endregion
@@ -383,11 +385,13 @@ public class Main extends Application {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Оповещение");
             alert.setContentText("Данные были успешно добавлены.");
+            alert.showAndWait();
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ошибка");
             alert.setContentText(e.getMessage());
             e.printStackTrace();
+            alert.showAndWait();
         }
 
 
